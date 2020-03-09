@@ -5,34 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hillel home work</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
     <style>
-        .converter {
-            max-width: 960px;
-            margin: 0 auto;
+        .hidden{
+            display: none;
+        }
+        input[type='number'] {
+            -moz-appearance:textfield;
         }
 
-        .converter__inVar, .converter__outVar {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            margin: 5px 0;
-        }
-
-        .center {
-            text-align: center;
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
         }
     </style>
+
 </head>
 <body>
-<div class="converter">
-    <form class="converter__inVar">
-        <input class="center" type="text">
-        <select></select>
-    </form>
-    <form class="converter__outVar">
-        <input class="center" type="text">
-        <select></select>
-    </form>
+<div class="container">
+    <div class="text-center" id="preloader">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <div id="converter" class="hidden">
+        <form id="inputData" class="input-group mb-3">
+            <select class="input-group-prepend"></select>
+            <input name="inputValue" class="form-control text-right" type="number" min="0" step="any" placeholder="0,00">
+            <span class="input-group-prepend input-group-text"></span>
+        </form>
+        <form id="resultData" class="input-group mb-3">
+            <select class="input-group-prepend"></select>
+            <input name="inputValue" class="form-control text-right" type="number" min="0" step="any" placeholder="0,00">
+            <span class="input-group-prepend input-group-text"></span>
+        </form>
+    </div>
+
 </div>
+
 
 <script src="index.js">
 </script>
